@@ -1,0 +1,723 @@
+body {
+    background-image: url("images/nba-logo-on-wood[1].jpg");
+    background-repeat: no-repeat; /* Set the background image to no repeat */
+    background-attachment: fixed; /*A background-image that will not scroll with the page (fixed)*/
+    background-position: center; /* Center the background image */
+    background-size:100% 100%;
+    margin:0;
+    color:chocolate;
+    font-family:Arial;
+    font-size: 30px;
+}   
+#nba {
+    width:250px;
+    height:170px;
+    float: right;  
+}
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden; /*The overflow is clipped, and the rest of the content will be invisible*/
+   background-color: #333;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 1;
+}
+ul li{
+   float: left;
+   border-right:1px solid #bbb;
+}
+
+ul li a, .dropbtn {
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+}
+
+ul li a:hover{
+   background-color: #111;
+}
+
+.active {
+   background-color: #1B6FDD;
+}
+
+.active:hover {
+   background-color: #0B3788;
+}
+
+li.dropdown {
+   display: inline-block;
+}
+
+.dropdown-content {
+   display: none;
+   position: fixed;
+   background-color: #f9f9f9;
+   min-width: 125px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+}
+
+.dropdown-content a {
+   color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+   text-align: left;
+} 
+
+.dropdown-content a:hover {
+   background-color: #DDD9D9;
+   font-size: 31px;
+}
+
+.dropdown:hover .dropdown-content {
+   display: block;
+}
+
+.tooltip .tooltiptext {
+   visibility: hidden;
+   width: 120px;
+   background-color:#D88211;
+   color:#3C53D8;
+   text-align: center;
+   font-family:Impact;
+   padding: 5px 0; /*padding: 25px 50px 75px 100px; top padding is 25px, right padding is 50px, bottom padding is 75px, left padding is 100px*/
+   border-radius: 6px;
+   position: absolute;
+   z-index: 0.5; 
+   bottom: 73%;
+   left: 92%;
+   margin-left: -60px;
+   /* Fade in tooltip - takes 2 second to go from 0% to 100% opac: */
+   opacity: 0;
+   transition: opacity 2s;
+}
+
+.tooltip .tooltiptext::after { /*inserts something after the content of each selected element(s).*/
+   content: "";
+   position: absolute;
+   bottom: 100%;
+   left: 46%;
+   margin-left: -5px;
+   border-width: 10px;
+   border-style: solid;
+   border-color: transparent transparent #D88211 transparent;
+}
+
+.tooltip:hover .tooltiptext {
+   visibility: visible;
+   opacity: 1;
+}
+
+h1{
+    text-align: center;
+    color:#1B84C0; 
+}
+
+dt{
+    font-family:Impact;
+    font-size: 45px;
+}
+
+dd{
+    font-family: 'Comic Sans MS';
+    color:#FC4416;
+    font-size: 30px;
+    font-weight:600;
+}
+
+.teams{
+    margin-top: 40px;
+    margin-left: 50px;
+    width: 80%;
+    display: table;
+}
+.tm{
+    width:300px;
+    height:300px;
+    margin-left: 60px;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+.tm:hover{
+    opacity: 1.0;
+    filter: alpha(opacity=100); 
+    transform:scale(1.1);
+}
+.nbat{
+    margin-top: 2%;
+    margin-left: 5%;
+    width: 78%;
+    display: none;
+    color:#FCAB16;
+    font-size: 40px;
+    font-family: Britannic Bold;
+    text-align: center;
+}
+.tmPage{
+    width:400px;
+    height:400px;
+}
+.ft{
+    width:50%;
+}
+.balance{
+    font-size: 22px;
+    color: #F34F03;
+}
+.records{
+    border: 2px solid #FC8516;
+    border-collapse: collapse;
+}
+.records td{
+    border: 2px solid #FC8516;
+    padding: 8px;
+}
+.abteam{
+    width:15%;
+    text-align: center;
+}
+.rtitle{
+    font-size: 50px;
+    color: #FABC13;
+}
+.rtitle2{
+    font-size: 50px;
+    color: #044479;
+    background-color: #65B1D4;
+}
+.rtitle3{
+    font-size: 60px;
+    color: #044479;
+    padding-bottom: 1.5%;
+}
+.wl{
+    font-size: 30px;
+    color: #0387F3;
+}
+.rostable{
+    width: 100%;
+    border: 2px solid #72AFDF;
+    border-collapse: collapse;
+    color:#807F7F;
+    background-color:rgba(221, 217, 217, 0.82); 
+    font-size: 30px;
+}
+.rostable td{
+    border: 2px solid #72AFDF;
+    text-align: center;
+    padding: 5px;
+}
+.rostable #rosth td{
+    color: #504F4F;
+    font-size: 40px;
+    padding: 15px;
+}
+.rostable tr:hover{
+    color: #504F4F;
+}
+.goBack{
+    font-size: 33px;
+    text-align: center;
+}
+.goBackLink:link, .goBackLink:visited{
+    text-decoration: none;
+    color:#FCAB16;
+    background-color: #C2332B;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+}
+.goBackLink:hover {
+    text-decoration: underline;
+    font-size: 35px;
+    color: #FC8516;
+}
+.goBackLink:active {
+    text-decoration: underline;
+    font-size: 33px;
+    color: #FC4C16;
+}
+.playerImg{
+    width: 110px;
+    height: 80px;
+    border-radius: 50px;
+    margin-left: 3%;
+}
+.playerTxt{
+    font-size: 20px;
+    width: 23%;
+}
+#stand{
+    width: 78%;
+    margin-top: 2%;
+    margin-left: 5%;
+    font-size: 25px;
+}
+.teamArea{
+    font-size: 35px;
+    color: #044479;;
+    background-color: rgba(170, 169, 169, 0.93); 
+}
+.teamImg{
+    width: 80px;
+    height: 80px;
+    margin-left: 3%;
+    transition-duration: 0.5s;
+}
+
+.teamImg:hover{
+    transform:scale(1.2);
+}
+.teamTable{
+    width: 100%;
+    border: none;
+    text-align: center;
+}
+.teamTable td{
+    border: none;
+}
+.line {
+    color:#FABC13;
+    font-family:Impact;
+    font-size: 50px;
+    text-align: center;
+}
+.dudu{
+    position: relative;  
+}
+ .dudu .dname {
+    visibility: hidden;
+    width: 100px;
+    font-size: 20px;
+    background-color:#13A5FA;
+    color:#FABC13;
+    text-align: center;
+    font-family:Impact;
+    padding: 5px;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 0.5;  
+    bottom: 80%;
+    left: 50%;
+    margin-left: -60px;
+}
+.dudu:hover .dname {
+    visibility: visible;
+}
+.num{
+    color:#FABC13;
+    font-size: 40px;
+    text-align: left;
+}
+
+#logTitle{
+    color: #0777F7;
+    font-size: 50px;
+    margin-top:5%;
+    margin-bottom:3%;
+}
+
+.fcenter{
+    background-color: #F7AF13;
+    margin: 0 420px;
+    border-radius: 20px;
+    color:#0777F7;
+    width:45%;
+    height: 32.5%;
+}
+.tdLogin{
+    font-size: 40px;
+    padding: 8px;
+}
+.formInput{
+    border-radius: 5px;
+    color: black;
+    font-size: 20px;
+    border-color:#FF5100;
+    opacity: 0.65;
+}
+.formInput::placeholder{
+    padding: 2px;
+    color: black;
+    font-size: 20px;
+    opacity: 0.65;
+}
+.formInput:onblur{
+    opacity:0.65;
+}
+.formInput:invalid{
+    border-color:#FF5100;
+}
+.formInput:valid{
+    border-color: green;
+}
+.formInput:focus{
+    opacity:1;
+}
+.buttonLog {
+    color:black;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 30px;
+    width:27%;
+    height: 20%;
+    cursor: pointer;
+    box-shadow: 0 3px #999;
+    border:none;
+    background-color: rgb(248, 70, 0);
+    font-family: impact;
+    margin-top:4%;
+    padding: 8px;   
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+.buttonLog:hover {
+    background-color:  rgb(248, 37, 0);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.buttonLog:active {
+    background-color: rgb(248, 37, 0);
+    box-shadow: 0 4px #0777F7;
+    transform: translateY(4px);
+}
+#sub{
+    margin-bottom:5%;
+}
+.toSign{
+    font-size: 28px;
+}
+
+#linK:link, #linK:visited{
+    color: #686464;
+    text-decoration: none;
+}
+
+#linK:hover, #linK:active{
+    text-decoration: underline;
+    color: #4B4949;
+}
+
+#signin{
+    margin: 40px auto; 
+    width:600px;
+    color:black;
+    font-size: 30px;
+}
+.formInput,select{
+    width:200px; 
+    height:30px ;
+}
+#signInTable{
+    background-color: #F7AF13;
+    border-radius: 20px;
+    color:#0777F7;
+    width:100%;
+}
+#gender{
+    width:204px; 
+    height:34px;
+    border-width: 2px;
+}
+.toLog{
+    font-size: 26px;
+}
+#space{
+    margin-left: 20px;
+}
+
+/* Style inputs with type="text", select elements and textareas */
+.cont {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #EB920C; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+.conSubmit {
+background-color: #2AA0E0;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+width: 150px;
+height: 50px;
+font-size: 20px;
+-webkit-transition-duration: 0.4s; /* Safari */
+transition-duration: 0.4s;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+.conSubmit:hover {
+    background-color: #0A51D6;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}   
+.conSubmit:active {
+    background-color: #0A3D94;
+    box-shadow: 0 4px #E6AC0F;
+    transform: translateY(4px);
+}
+/* Add a background color and some padding around the form */
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 70%; 
+    margin-left: 200px;
+    font-family: 'Comic Sans MS';
+} 
+.begin {
+    margin-top: 30px;
+    color:#FF9100;
+    margin-bottom: 30px;
+    margin-left: 200px;
+    font-family: 'Comic Sans MS';
+}
+.who{
+    color:#00CCFF;
+}
+#welCont{
+    color:#2387B9;
+    margin-left: 18%;
+    font-size: 50px;
+}
+#eror{
+    visibility: hidden;
+    margin-bottom: 3%;
+    display: none;
+    color:red;
+    font-size: 17px;
+}
+#eror2, #eror3{
+    visibility: hidden;
+    margin-left: 3%;
+    margin-top: 1%;
+    display: none;
+    color:red;
+    font-size: 17px;
+}
+.firstAbout{
+    color:#FFA600;
+    margin-left: 100px;
+    font-family: 'Comic Sans MS';
+    font-size: 25px;
+    font-weight:600;
+}
+.abn{
+    margin-top: 3%;
+}
+.tmtwe{
+    color: #FF5100;
+}
+.titletm{
+    font-size: 35px;
+}
+.quest{
+    color:#00CCFF;
+    font-size: 30px;
+}
+.rules:link, .rules:visited{
+    text-decoration: none;
+    color: #FF6600;
+}
+.rules:hover, .rules:active{
+    text-decoration: underline;
+    color: #1B6FDD;
+}
+.moreInf{
+    font-size: 30px;
+    text-align: center;
+    margin-left: 23%;
+}
+.moreInfLink:link, .moreInfLink:visited{
+    text-decoration: none;
+    color:#FCAB16;
+    background-color: #C2332B;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+}
+.moreInfLink:hover {
+    text-decoration: underline;
+    font-size: 32px;
+    color: #FC8516;
+}
+.moreInfLink:active {
+    text-decoration: underline;
+    font-size: 30px;
+    color: #FC4C16;
+}
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: #ccc;
+}
+.progress-bar {
+    height: 8px;
+    background-color: #6DAFE9;
+    width: 0%;
+}
+  
+.headcolor{
+    color: #FFBB00;
+    font-size: 45px;
+}
+
+.adminstyle{
+    font-size: 200%;
+}
+
+.welcomAdmFont{
+    font-family: 'Comic Sans MS';
+}
+.admcontable{
+    width: 84%;
+    margin-top: 2%;
+    border: 2px solid #72AFDF;
+    border-collapse: collapse;
+    color:#807F7F;
+    background-color:rgba(221, 217, 217, 0.82); 
+    font-size: 20px;
+    font-family: 'Comic Sans MS';
+}
+.admcontable td{
+    border: 2px solid #72AFDF;
+    text-align: center;
+    padding: 6px;
+}
+.admcontable #rosth td{
+    color: #504F4F;
+    font-size: 30px;
+    padding: 5px;
+}
+.admcontable tr:hover{
+    color: #504F4F;
+}
+.contadm{
+    width: 13%;
+}
+
+.imgCon{
+    width: 40px;
+    height: 40px; 
+    cursor:pointer;
+    transition-duration: 0.3s;
+}
+
+.imgCon:hover{
+    transform:scale(1.2);
+    cursor:pointer;
+}
+
+hr{
+    border-width: 2px;
+    border-top: 2px solid #FA6806;    
+}
+
+#updform{
+    width: 650px;
+    color:black;
+    font-size: 30px;
+}
+
+#updateTable{
+    margin-top: 5%;
+    background-color: #F7AF13;
+    border-radius: 20px;
+    color:#0777F7;
+    width: 100%;
+    margin-left: 60%; 
+}
+
+.updErrors{
+    margin-left: 3%;
+    margin-top: 1%;
+    display: none;
+    color:red;
+    font-size: 17px;
+}
+
+#forgotPass{
+    margin-left: 3%;
+    margin-top: 1%;
+    font-size: 20px;
+}
+
+#forgotLink:link, #forgotLink:visited{
+    text-decoration: none;
+    color:#FF3300;
+}
+#forgotLink:hover, #forgotLink:active{
+    text-decoration: underline;
+    color:red;
+}
+
+.tdChange{
+    font-size: 32px;
+    padding: 8px;
+}
+
+.videotable{
+    margin-left: 5%;
+    width: 80%;
+    border: 2px solid #72AFDF;
+    border-collapse: collapse;
+    color:#807F7F;
+    background-color:rgba(221, 217, 217, 0.82); 
+    font-size: 20px;
+}
+
+.videoTitle{
+    font-size: 45px;
+    color: #025FEB;
+    text-align: center;
+}
+
+.video2Title{
+    font-size: 35px;
+    color: #028EEB;
+    text-align: center;
+}
+
+.vidLink:link, .vidLink:visited{
+    color: #117D9E;
+    text-decoration: none;
+}
+
+.vidLink:hover, .vidLink:active{
+    text-decoration: underline;
+    color: #025FEB;
+}
+
+.videoList li{
+    padding: 4px;
+}
+
+.backIframe{
+    background-color: #008CFF;
+    margin-left: 5%;
+    width: 80%;
+    height: 700px;
+}
